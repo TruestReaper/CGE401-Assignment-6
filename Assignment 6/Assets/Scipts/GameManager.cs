@@ -1,3 +1,12 @@
+/*
+* Name: John Chirayil
+* File: GameManager.cs
+* CGE401 - Assignment 6
+* Descripton: A GameManager class implementing the Singleton 
+* pattern to manage game state, level loading, and pausing 
+* functionality across scenes.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

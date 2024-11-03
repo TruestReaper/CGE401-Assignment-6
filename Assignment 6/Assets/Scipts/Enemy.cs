@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* Name: John Chirayil
+* File: Enemy.cs
+* CGE401 - Assignment 6
+* Descripton: An abstract Enemy class implementing IDamageable, 
+* with health, speed, and weapon attributes, and methods for 
+* attacking and taking damage.
+*/
+
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scipts
@@ -23,17 +32,5 @@ namespace Assets.Scipts
         protected abstract void Attack(int amount);
 
         public abstract void TakeDamage(int amount);
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

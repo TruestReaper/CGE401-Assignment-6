@@ -1,3 +1,11 @@
+/*
+* Name: John Chirayil
+* File: Golem.cs
+* CGE401 - Assignment 6
+* Descripton: A Golem class derived from Enemy, with increased health,
+* score increment, and implementations for attack and damage-taking behaviors.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scipts;
@@ -18,12 +26,6 @@ public class Golem : Enemy
     protected override void Attack(int amount)
     {
         Debug.Log("Golem attacks");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void TakeDamage(int amount)

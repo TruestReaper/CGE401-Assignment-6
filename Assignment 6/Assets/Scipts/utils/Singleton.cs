@@ -1,3 +1,11 @@
+/*
+* Name: John Chirayil
+* File: Singleton.cs
+* CGE401 - Assignment 6
+* Descripton: A generic Singleton class to ensure only one 
+* instance of type T exists in a scene, with global access.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

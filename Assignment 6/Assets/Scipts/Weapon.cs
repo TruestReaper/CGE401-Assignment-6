@@ -1,3 +1,12 @@
+/*
+* Name: John Chirayil
+* File: Weapon.cs
+* CGE401 - Assignment 6
+* Descripton: A Weapon class that grants a damage bonus, 
+* interacts with an enemy, and includes a recharge 
+* functionality.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scipts;
@@ -22,17 +31,5 @@ public class Weapon : MonoBehaviour
     public void Recharge()
     {
         Debug.Log("Recharging weapon");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
