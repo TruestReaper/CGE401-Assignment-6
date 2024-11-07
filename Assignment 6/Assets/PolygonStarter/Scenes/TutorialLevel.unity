@@ -19989,6 +19989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 548571601}
   hasWon: 0
+  mainMenuSceneName: MainMenu
 --- !u!1001 &1192585567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33834,6 +33835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallThreshold: -10
   loseText: {fileID: 757009176}
+  tutorialLevelSceneName: TutorialLevel
 --- !u!43 &1662543117
 Mesh:
   m_ObjectHideFlags: 0
