@@ -20,6 +20,9 @@ public class LoseOnFall : MonoBehaviour
     private FinishLineTriggerZone finishLine;  // Reference to the FinishLineTriggerZone script
     private bool hasLost = false;      // Flag to check if the player has lost
 
+    // Set this string so it still loads the tutorial level when losing
+    public string tutorialLevelSceneName = "TutorialLevel";
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -54,7 +57,7 @@ public class LoseOnFall : MonoBehaviour
         {
             if (loseText != null) loseText.enabled = false;
             if (finishLine != null && finishLine.winText != null) finishLine.winText.enabled = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(tutorialLevelSceneName);
         }
     }
 }

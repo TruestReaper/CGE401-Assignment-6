@@ -18,6 +18,7 @@ public class FinishLineTriggerZone : MonoBehaviour
     public Text winText;             // UI Text component for displaying the win message
     public bool hasWon = false;     // Flag to check if the player has won
     public static FinishLineTriggerZone instance;
+    public string mainMenuSceneName = "MainMenu";
 
     // Start is called before the first frame update
     private void Start()
@@ -39,7 +40,7 @@ public class FinishLineTriggerZone : MonoBehaviour
             // Display the win message
             if (winText != null)
             {
-                winText.text = "You Win! Press R to Play Again!";
+                winText.text = "You Win! Press R to Play Again! Press M for Main Menu";
                 winText.enabled = true;
             }
         }
@@ -53,6 +54,12 @@ public class FinishLineTriggerZone : MonoBehaviour
         {
             hasWon = false;  // Reset the win status for the next round
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        // Allow the player to return to the main menu if they've won and pressed "M"
+        if (hasWon && Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene(mainMenuSceneName);
         }
     }
 
