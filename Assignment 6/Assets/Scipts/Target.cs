@@ -12,19 +12,13 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
-    //public AudioSource hitSound, destroyedSound;
-    private ScoreManager scoreManager;
-
-    void Start()
-    {
-        scoreManager = FindObjectOfType<ScoreManager>();
-    }
+    public AudioSource hitSound, destroyedSound;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
 
-        //hitSound.Play();
+        hitSound.Play();
 
         if (health <= 0)
         {
@@ -34,8 +28,7 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        //destroyedSound.Play();
-        scoreManager.AddScore();
+        destroyedSound.Play();
         Destroy(gameObject);
     }
 }

@@ -2,7 +2,7 @@
 * Name: John Chirayil
 * CGE401 - Assignment 5B
 * File: ShootWithRaycasts.cs
-* Desc: Sets the controller for rifle
+* Desc: Sets the controller for rifle (Target Test)
 */
 
 using System;

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PolygonStarter/CurrentScenes/TutorialLevel.unity
     guid: 5215016c20f88ea498985ac3e0ab4f9d
+  - enabled: 1
+    path: Assets/PolygonStarter/CurrentScenes/PropHunt.unity
+    guid: 081ed8d291c08f746baea8220e9fa196
   m_configObjects: {}

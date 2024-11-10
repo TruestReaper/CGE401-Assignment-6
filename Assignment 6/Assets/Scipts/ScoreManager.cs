@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;
     private int targetScore = 10;
     private bool gameEnded = false;
+    public AudioSource winSound;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,7 @@ public class ScoreManager : MonoBehaviour
 
         if (score >= targetScore)
         {
+            winSound.Play();
             EndGame();
         }
     }
