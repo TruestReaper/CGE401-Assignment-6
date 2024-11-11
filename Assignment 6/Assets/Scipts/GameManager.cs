@@ -12,10 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public  class GameManager : Singleton<GameManager>
+public  class GameManager : Singleton<GameManager>, IPauseHandler
 {
     public int score;
-
     public GameObject pauseMenu;
     public GameObject propHuntList;
     public GameObject instructions;
