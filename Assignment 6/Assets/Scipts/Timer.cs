@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 300f;  // Set to 5 minutes (300 seconds)
     public Text timerText;
     private bool gameEnded = false;
+    public AudioSource timesUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,7 @@ public class Timer : MonoBehaviour
         gameEnded = true;
         Debug.Log("Time's up! You lose.");
         timerText.text = "Time's up! Press 'R' to Retry or 'M' for Main Menu";
+        timesUpSound.Play();
 
         // Freeze the game
         Time.timeScale = 0;

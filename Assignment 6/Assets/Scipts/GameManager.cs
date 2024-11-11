@@ -17,9 +17,11 @@ public  class GameManager : Singleton<GameManager>
     public int score;
 
     public GameObject pauseMenu;
+    public GameObject propHuntList;
 
     // variable to keep track of what level we are on
     private string CurrentLevelName = string.Empty;
+
 
     /*#region This code makes this class a Singleton
     public static GameManager instance;
@@ -43,6 +45,7 @@ public  class GameManager : Singleton<GameManager>
     #endregion*/
 
     // methods to load and unload scenes
+
     public void LoadLevel(string levelName)
     {
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
@@ -93,5 +96,24 @@ public  class GameManager : Singleton<GameManager>
         {
             Pause();
         }
+
+        if (Input.GetKeyDown(KeyCode.O)) 
+        {
+            TogglePropHuntList();
+        }
+    }
+
+    public void TogglePropHuntList()
+    {
+        //Time.timeScale = 0f;
+        // Toggle the active state of the prop hunt list
+        propHuntList.SetActive(true);
+    }
+
+    public void UntogglePropHuntList()
+    {
+        //Time.timeScale = 1f;
+        // Toggle the active state of the prop hunt list
+        propHuntList.SetActive(false);
     }
 }
