@@ -18,6 +18,7 @@ public  class GameManager : Singleton<GameManager>
 
     public GameObject pauseMenu;
     public GameObject propHuntList;
+    public GameObject instructions;
 
     // variable to keep track of what level we are on
     private string CurrentLevelName = string.Empty;
@@ -101,6 +102,11 @@ public  class GameManager : Singleton<GameManager>
         {
             TogglePropHuntList();
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInstructions();
+        }
     }
 
     public void TogglePropHuntList()
@@ -115,5 +121,19 @@ public  class GameManager : Singleton<GameManager>
         //Time.timeScale = 1f;
         // Toggle the active state of the prop hunt list
         propHuntList.SetActive(false);
+    }
+
+    public void ToggleInstructions()
+    {
+        //Time.timeScale = 0f;
+        // Toggle the active state of the prop hunt list
+        instructions.SetActive(true);
+    }
+
+    public void UntoggleInstructions()
+    {
+        //Time.timeScale = 1f;
+        // Toggle the active state of the prop hunt list
+        instructions.SetActive(false);
     }
 }
