@@ -56,6 +56,7 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
             return;
         }
         CurrentLevelName = levelName;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UnloadLevel(string levelName)
@@ -81,12 +82,14 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
     // pausing and unpausing
     public void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
     }
 
     public void Unpause()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
     }
@@ -111,29 +114,37 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
 
     public void TogglePropHuntList()
     {
-        //Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
         // Toggle the active state of the prop hunt list
         propHuntList.SetActive(true);
+        //Pause(); 
     }
 
     public void UntogglePropHuntList()
     {
-        //Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
         // Toggle the active state of the prop hunt list
         propHuntList.SetActive(false);
+        //Unpause();
     }
 
     public void ToggleInstructions()
     {
-        //Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
         // Toggle the active state of the prop hunt list
         instructions.SetActive(true);
+        //Pause();
     }
 
     public void UntoggleInstructions()
     {
-        //Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
         // Toggle the active state of the prop hunt list
         instructions.SetActive(false);
+        //Unpause();
     }
 }
