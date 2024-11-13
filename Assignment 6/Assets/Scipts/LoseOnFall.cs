@@ -29,7 +29,7 @@ public class LoseOnFall : MonoBehaviour
         // Ensure the lose message is hidden at the start
         if (loseText != null)
         {
-            loseText.enabled = true;
+            loseText.enabled = false;
         }
 
         // Find the FinishLineTriggerZone script to access hasWon
@@ -55,7 +55,7 @@ public class LoseOnFall : MonoBehaviour
         // Allow the player to restart the level if they've lost and pressed "R"
         if (hasLost || (finishLine != null && finishLine.hasWon) && Input.GetKeyDown(KeyCode.R))
         {
-            if (loseText != null) loseText.enabled = true;
+            if (loseText != null) loseText.enabled = false;
             if (finishLine != null && finishLine.winText != null) finishLine.winText.enabled = false;
             //SceneManager.LoadScene(tutorialLevelSceneName);
             GameManager.Instance.RestartLevel();
