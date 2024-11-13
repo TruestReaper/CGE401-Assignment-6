@@ -60,7 +60,7 @@ public class FinishLineTriggerZone : MonoBehaviour
         if (hasWon && Input.GetKeyDown(KeyCode.M))
         {
             //SceneManager.LoadScene("MainMenu");
-            GameManager.Instance.UnloadCurrentLevel();
+            GameManager.Instance.GetBackToMainMenu();
         }
     }
 

@@ -67,6 +67,13 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
         LoadLevel(CurrentLevelName);
     }
 
+    public void GetBackToMainMenu () 
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void UnloadLevel(string levelName)
     {
         Time.timeScale = 1;
@@ -82,6 +89,9 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
     public void UnloadCurrentLevel()
     {
         Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
 
         AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
         if (ao == null)

@@ -89,7 +89,7 @@ public class Timer : MonoBehaviour
     {
         // Reset time scale back to normal when going to the main menu
         Time.timeScale = 1;
-        GameManager.Instance.UnloadCurrentLevel();
+        GameManager.Instance.GetBackToMainMenu();
     }
 
 }

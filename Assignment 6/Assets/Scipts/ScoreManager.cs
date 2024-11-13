@@ -81,6 +81,6 @@ public class ScoreManager : MonoBehaviour
     {
         // Reset time scale back to normal and load the main menu scene
         Time.timeScale = 1;
-        GameManager.Instance.UnloadCurrentLevel();
+        GameManager.Instance.GetBackToMainMenu();
     }
 }
