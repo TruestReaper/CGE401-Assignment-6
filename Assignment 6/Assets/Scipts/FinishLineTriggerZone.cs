@@ -52,13 +52,15 @@ public class FinishLineTriggerZone : MonoBehaviour
         if (hasWon && Input.GetKeyDown(KeyCode.R))
         {
             hasWon = false;  // Reset the win status for the next round
-            SceneManager.LoadScene("TutorialLevel");
+            //SceneManager.LoadScene("TutorialLevel");
+            GameManager.Instance.RestartLevel();
         }
 
         // Allow the player to return to the main menu if they've won and pressed "M"
         if (hasWon && Input.GetKeyDown(KeyCode.M))
         {
-            SceneManager.LoadScene("MainMenu");
+            //SceneManager.LoadScene("MainMenu");
+            GameManager.Instance.UnloadCurrentLevel();
         }
     }
 

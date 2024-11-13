@@ -82,14 +82,14 @@ public class Timer : MonoBehaviour
     {
         // Reset time scale back to normal when restarting
         Time.timeScale = 1;
-        SceneManager.LoadScene("PropHunt");
+        GameManager.Instance.RestartLevel();
     }
 
     void ReturnToMainMenu()
     {
         // Reset time scale back to normal when going to the main menu
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");  // Replace "MainMenu" with your main menu scene's name
+        GameManager.Instance.UnloadCurrentLevel();
     }
 
 }

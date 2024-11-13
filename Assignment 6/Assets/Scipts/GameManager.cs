@@ -49,6 +49,8 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
 
     public void LoadLevel(string levelName)
     {
+        Time.timeScale = 1;
+
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         if (ao == null)
         {
@@ -59,8 +61,16 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void RestartLevel()
+    {
+        UnloadCurrentLevel();
+        LoadLevel(CurrentLevelName);
+    }
+
     public void UnloadLevel(string levelName)
     {
+        Time.timeScale = 1;
+
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         if (ao == null)
         {
@@ -71,6 +81,8 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
 
     public void UnloadCurrentLevel()
     {
+        Time.timeScale = 1;
+
         AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
         if (ao == null)
         {

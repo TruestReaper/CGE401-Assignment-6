@@ -74,13 +74,13 @@ public class ScoreManager : MonoBehaviour
     {
         // Reset time scale back to normal and reload the scene
         Time.timeScale = 1;
-        SceneManager.LoadScene("PropHunt");
+        GameManager.Instance.RestartLevel();
     }
 
     void LoadMainMenu()
     {
         // Reset time scale back to normal and load the main menu scene
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu"); // Replace "MainMenu" with the exact name of your main menu scene
+        GameManager.Instance.UnloadCurrentLevel();
     }
 }
