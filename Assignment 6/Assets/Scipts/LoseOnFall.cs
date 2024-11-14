@@ -59,6 +59,7 @@ public class LoseOnFall : MonoBehaviour
             if (finishLine != null && finishLine.winText != null) finishLine.winText.enabled = false;
             //SceneManager.LoadScene(tutorialLevelSceneName);
             GameManager.Instance.RestartLevel();
+
         }
     }
 }

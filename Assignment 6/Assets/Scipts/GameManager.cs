@@ -63,7 +63,27 @@ public  class GameManager : Singleton<GameManager>, IPauseHandler
 
     public void RestartLevel()
     {
-        UnloadCurrentLevel();
+        StartCoroutine(RestartLevelCoroutine());
+    }
+
+    public IEnumerator RestartLevelCoroutine()
+    {
+        Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+
+        AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
+        if (ao == null)
+        {
+            Debug.LogError("[GameManager] Unable to unload level " + CurrentLevelName);
+            yield return null;
+        }
+
+        while (!ao.isDone) {
+            yield return new WaitForSeconds(0.2f);
+        }
+
         LoadLevel(CurrentLevelName);
     }
 
